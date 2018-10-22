@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+import sys, os
+
+for _arg in sys.argv[1:]:
+	try:
+		with open(_arg, 'r') as _file:
+			for _line in iter((_file.readline),""):
+				print _line,
+	except IOError as _err:
+		sys.stderr.write(os.path.basename(sys.argv[0]) + ": " + _arg + ": " + _err.strerror + "\n")
