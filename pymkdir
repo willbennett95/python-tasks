@@ -2,6 +2,7 @@
 
 import os, errno
 
+
 new = input("path")
 try:
 	os.makedirs(new)
