@@ -31,8 +31,9 @@ elif difficulty == 3:
         board.append(["○"] * 6)
     bounds = 5
 
+
 # function to print out the board that will be called after each turn
-def print_board(board):
+def print_board():
     print("Battle Area")
     print("===========")
     for y in board:
@@ -51,7 +52,7 @@ print("=" * 50)
 print("- Take a guess between 0 and ", bounds, "for row & column -")
 print("- You have " + str(NO_USER_GUESS) + " turns to complete the game -\n")
 print("=" * 50 + "\n")
-print_board(board)
+print_board()
 
 
 # find a random integer between 0 and 5 for the y  co-ordinate of the battleship
@@ -77,10 +78,10 @@ for attempt in range(NO_USER_GUESS):
     # if the player guesses correctly, end the game
     if guess_y  == ship_y  and guess_x == ship_x:
         print("=" * 50 + "\n")
-        print("######## Damn! You sunk my battleship! ########\n")
+        print("######### Damn! You sunk my battleship! #########\n")
         print("=" * 50 + "\n")
         board[guess_y][guess_x] = "✹"
-        print_board(board)
+        print_board()
         break
     else:
         # if the player enters an invalid co-ordinate, add 1 to turn
@@ -95,12 +96,12 @@ for attempt in range(NO_USER_GUESS):
             board[guess_y][guess_x] = "◙"
         # print the board again showing the missed shot
         print("Turn %d \n" % (turn + 1))
-        print_board(board)
+        print_board()
         turn = turn + 1
         # if the user hits the predetermined number of guesses, end the game
         if turn == NO_USER_GUESS:
             print("\nGame Over, Better luck next time...\n")
             board[ship_y][ship_x] = "乂"
-            print_board(board)
+            print_board()
 
 
