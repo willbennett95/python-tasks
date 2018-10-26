@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Python: Simple HTTP Server</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </head>
+  <body>
+	<h3>Python: Simple HTTP Server</h3>
+	<div>
+		<div id="info"></div>
+	</div>
+  	<script>
+		$.getJSON("info.json", function (info) {
+			let host_name = `<p>hostname: ${info.host_name}</p>`
+			let version = `<p>version: ${info.version}</p>`
+			$('#info').html(host_name + version)
+		});
+  	</script>
+  </body>
+</html>
